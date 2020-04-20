@@ -1,12 +1,205 @@
-/* comentariuoiasjniocsdbuhcvbdfshgcvb df */
-html,
-body {
-    background-color: #d7d7d7;
-    padding: 0;
-    margin: 0;
-    height: 100%;
+/* Genereal Styles
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-img {
-    width: 150px;
+body {
+  background-color: #ece9e6;
+  /* background: linear-gradient(to right, #ece9e6, #ffffff); */
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* icons
+========== */
+.fa-circle-thin {
+  color: #b4b4c6;
+}
+
+.fa-check-circle {
+  color: #4ad991;
+}
+
+.fa-times {
+  color: #d7d7d7;
+  font-size: 14px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  transition: .1s ease all;
+}
+
+.fa-trash {
+  background-color: #ffe2e6;
+  color: #ff7285;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  cursor: pointer;
+  z-index: 99;
+  transition: .2s ease all;
+}
+
+/* Card Styles
+================ */
+.card {
+  width: 380px;
+  height: auto;
+  border-radius: 8px;
+  background-color: #ffff;
+}
+
+/* === Card Header === */
+.card__header {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-image: url("https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-container {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.date-text {
+  color: #d7d7d7;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* === Card body === */
+.card__body {
+  position: relative;
+  height: 360px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.menu__filter {
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  text-align: center;
+  font-size: 14px;
+  color: #566573;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu__filter.active {
+  border-bottom-color: #ffca83;
+  font-weight: 500;
+  color: #ffca83;
+}
+
+.todo-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0 10px;
+  height: auto;
+  max-height: 310px;
+  overflow-y: auto;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background-color: #d7d7d7;
+  border-radius: 5px;
+}
+
+.todo-list__item {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: .2s ease all;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.todo-list__item--complete {
+  background-color: #f0f0f7;
+}
+
+.todo-list__item--complete .label {
+  color: #b4b4c6;
+  text-decoration: line-through;
+}
+
+.todo-list__item:hover .fa-times {
+  opacity: 1;
+}
+
+.label {
+  width: 100%;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #566573;
+}
+
+/* === Card Footer === */
+.card__footer {}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  font-size: 12px;
+  border: none;
+  border-top: 1px solid #d7d7d7;
+  color: #566573;
+  outline: none;
+  transition: .3s ease all;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+
+  .fa-times {
+    opacity: 1;
+  }
 }
